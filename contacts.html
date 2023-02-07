@@ -5,29 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Контакты</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <header>
-      <span><a href="/">Интернет Магазин Шин</a></span>
+      <span><a href="/" class="logotype">Интернет Магазин Шин</a></span>
       <nav>
-        <ul>
-          <li><a href="/">Главная</a></li>
-          <li>
+        <ul class="list">
+          <li class="list-item"><a href="/">Главная</a></li>
+          <li class="list-item list-item-with-nested-list">
             Каталог
-            <ul>
-              <li>
-                <a href="/catagories/summer-wheels">Летние шины</a>
-              </li>
-              <li>
-                <a href="/catagories/winter-wheels">Зимние шины</a>
-              </li>
-              <li>
-                <a href="/catagories/allday-wheels">Всесезонные шины</a>
-              </li>
-            </ul>
+            <div class="nested-list-wrapper">
+              <ul class="list nested-list">
+                <li class="list-item">
+                  <a href="/categories/summer-wheels">Летние шины</a>
+                </li>
+                <li class="list-item">
+                  <a href="/categories/winter-wheels">Зимние шины</a>
+                </li>
+                <li class="list-item">
+                  <a href="/categories/allday-wheels">Всесезонные шины</a>
+                </li>
+              </ul>
+            </div>
           </li>
-          <li><a href="/contacts.html">Контакты</a></li>
-          <li><a href="/about-us.html">О нас</a></li>
+          <li class="list-item"><a href="/contacts.html">Контакты</a></li>
+          <li class="list-item"><a href="/about-us.html">О нас</a></li>
         </ul>
       </nav>
     </header>
@@ -42,20 +45,24 @@
     </main>
     <footer>
       <nav>
-        <ul>
-          <li><a href="/">Главная</a></li>
-          <li>
+        <ul class="list">
+          <li class="list-item"><a href="/">Главная</a></li>
+          <li class="list-item">
             Каталог
-            <ul>
-              <li><a href="/catagories/winter-wheels.html">Летние шины</a></li>
-              <li><a href="/catagories/summer-wheels.html">Зимние шины</a></li>
-              <li>
-                <a href="/catagories/allday-wheels.html">Всесезонные шины</a>
+            <ul class="list nested-list">
+              <li class="list-item">
+                <a href="/categories/summer-wheels">Летние шины</a>
+              </li>
+              <li class="list-item">
+                <a href="/categories/winter-wheels">Зимние шины</a>
+              </li>
+              <li class="list-item">
+                <a href="/categories/allday-wheels">Всесезонные шины</a>
               </li>
             </ul>
           </li>
-          <li><a href="/contacts.html">Контакты</a></li>
-          <li><a href="/about-us.html">О нас</a></li>
+          <li class="list-item"><a href="/contacts.html">Контакты</a></li>
+          <li class="list-item"><a href="/about-us.html">О нас</a></li>
         </ul>
       </nav>
       2023
