@@ -1,0 +1,72 @@
+.product {
+  padding: 20px;
+}
+
+.product .wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.product .wrapper .image-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product .wrapper .image-section .product-image {
+  border-radius: 5px;
+}
+
+.product .wrapper .image-section .product-price {
+  color: rgb(231, 76, 76);
+}
+
+.product .wrapper .image-section .product-price .old-price {
+  color: #bbb;
+  text-decoration: line-through;
+}
+
+.product .wrapper .description-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product .wrapper .description-section .product-description {
+  margin: 0;
+  font-size: 18px;
+}
+
+.product .wrapper .description-section .product-stats {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.product .wrapper .description-section .product-stats .product-stat::before {
+  content: "--";
+  margin-right: 10px;
+}
+
+.product
+  .wrapper
+  .description-section
+  .product-stats
+  .product-stat:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.product .wrapper .description-section button {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.product .wrapper .description-section button:nth-of-type(1) {
+  background-color: rgb(111, 150, 223);
+}
+
+.product .wrapper .description-section button:nth-of-type(2) {
+  background-color: rgb(231, 76, 76);
+}
