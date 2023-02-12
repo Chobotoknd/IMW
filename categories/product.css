@@ -15,6 +15,8 @@
 
 .product .wrapper .image-section .product-image {
   border-radius: 5px;
+  width: 500px;
+  height: 500px;
 }
 
 .product .wrapper .image-section .product-price {

@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Средние зимние шины</title>
-    <link rel="stylesheet" href="../../index.css" />
+    <title>Средние летние шины</title>
+    <link rel="stylesheet" href="/index.css" />
+    <link rel="stylesheet" href="/categories/product.css" />
   </head>
   <body>
     <header>
@@ -34,52 +35,64 @@
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="product">
       <h1>Средние зимние шины</h1>
-      <section>
-        <img src="/wheel.jpg" alt="..." />
-        <span>10 000 руб.</span>
-      </section>
-      <section>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At architecto
-          quaerat velit numquam. Neque dolores nihil eligendi possimus sit
-          blanditiis.
-        </p>
-      </section>
-      <section>
-        <ul>
-          <li>Характеристика #1</li>
-          <li>Характеристика #2</li>
-          <li>Характеристика #3</li>
-          <li>Характеристика #4</li>
-          <li>Характеристика #5</li>
-        </ul>
-      </section>
+      <div class="wrapper">
+        <section class="image-section">
+          <img
+            src="/categories/winter-wheels/001/wheel.jpg"
+            alt="Средние зимние шины"
+            class="product-image"
+          />
+          <h2 class="product-price">
+            10 000 руб. <span class="old-price">25 000 руб</span>
+          </h2>
+        </section>
+        <section class="description-section">
+          <p class="product-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+            architecto quaerat velit numquam. Neque dolores nihil eligendi
+            possimus sit blanditiis.
+          </p>
+          <ul class="product-stats">
+            <li class="product-stat">Характеристика #1</li>
+            <li class="product-stat">Характеристика #2</li>
+            <li class="product-stat">Характеристика #3</li>
+            <li class="product-stat">Характеристика #4</li>
+            <li class="product-stat">Характеристика #5</li>
+          </ul>
+          <div>
+            <button>В корзину</button>
+            <button>Купить в один клик</button>
+          </div>
+        </section>
+      </div>
     </main>
     <footer>
-      <nav>
-        <ul class="list">
-          <li class="list-item"><a href="/">Главная</a></li>
-          <li class="list-item">
-            Каталог
-            <ul class="list nested-list">
-              <li class="list-item">
-                <a href="/categories/summer-wheels">Летние шины</a>
-              </li>
-              <li class="list-item">
-                <a href="/categories/winter-wheels">Зимние шины</a>
-              </li>
-              <li class="list-item">
-                <a href="/categories/allday-wheels">Всесезонные шины</a>
-              </li>
-            </ul>
-          </li>
-          <li class="list-item"><a href="/contacts.html">Контакты</a></li>
-          <li class="list-item"><a href="/about-us.html">О нас</a></li>
-        </ul>
-      </nav>
-      2023
+      <div class="wrapper">
+        <nav>
+          <ul class="list">
+            <li class="list-item"><a href="/">Главная</a></li>
+            <li class="list-item">
+              Каталог
+              <ul class="list nested-list">
+                <li class="list-item">
+                  <a href="/categories/summer-wheels">Летние шины</a>
+                </li>
+                <li class="list-item">
+                  <a href="/categories/winter-wheels">Зимние шины</a>
+                </li>
+                <li class="list-item">
+                  <a href="/categories/allday-wheels">Всесезонные шины</a>
+                </li>
+              </ul>
+            </li>
+            <li class="list-item"><a href="/contacts.html">Контакты</a></li>
+            <li class="list-item"><a href="/about-us.html">О нас</a></li>
+          </ul>
+        </nav>
+        2023
+      </div>
     </footer>
   </body>
 </html>

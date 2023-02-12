@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Всесезонные шины</title>
     <link rel="stylesheet" href="../../index.css" />
+    <link rel="stylesheet" href="./category.css" />
   </head>
   <body>
     <header>
@@ -35,40 +36,68 @@
       </nav>
     </header>
     <main>
-      <h1>Всесезонные шины</h1>
-      <section>
-        <a href="/categories/allday-wheels/001.html">
-          <article>
-            <img src="/#" alt="..." />
-            <h4>Средние всесезонные шины</h4>
-            <span>10 000 руб.</span>
-          </article>
-        </a>
+      <h1 class="category-header">Всесезонные шины</h1>
+      <section class="category">
+        <article class="product">
+          <a href="/categories/allday-wheels/001/index.html">
+            <img
+              src="/categories/allday-wheels/001/wheel.jpg"
+              alt="Средние всесезонные шины"
+              class="product-image"
+            />
+            <h4 class="product-name">Средние всесезонные шины</h4>
+            <span class="product-price">15 000 руб.</span>
+          </a>
+        </article>
+        <article class="product">
+          <a href="/categories/allday-wheels/002/medium_wheel.jpg">
+            <img
+              src="/categories/allday-wheels/002/medium_wheel.jpg"
+              alt="Хорошие всесезонные шины"
+              class="product-image"
+            />
+            <h4 class="product-name">Хорошие всесезонные шины</h4>
+            <span class="product-price">15 000 руб.</span>
+          </a>
+        </article>
+        <article class="product">
+          <a href="/categories/allday-wheels/003/index.html">
+            <img
+              src="/categories/allday-wheels/003/Top_wheel.jpg"
+              alt="Отличные всесезонные шины"
+              class="product-image"
+            />
+            <h4 class="product-name">Отличные всесезонные шины</h4>
+            <span class="product-price">15 000 руб.</span>
+          </a>
+        </article>
       </section>
     </main>
     <footer>
-      <nav>
-        <ul class="list">
-          <li class="list-item"><a href="/">Главная</a></li>
-          <li class="list-item">
-            Каталог
-            <ul class="list nested-list">
-              <li class="list-item">
-                <a href="/categories/summer-wheels">Летние шины</a>
-              </li>
-              <li class="list-item">
-                <a href="/categories/winter-wheels">Зимние шины</a>
-              </li>
-              <li class="list-item">
-                <a href="/categories/allday-wheels">Всесезонные шины</a>
-              </li>
-            </ul>
-          </li>
-          <li class="list-item"><a href="/contacts.html">Контакты</a></li>
-          <li class="list-item"><a href="/about-us.html">О нас</a></li>
-        </ul>
-      </nav>
-      2023
+      <div class="wrapper">
+        <nav>
+          <ul class="list">
+            <li class="list-item"><a href="/">Главная</a></li>
+            <li class="list-item">
+              Каталог
+              <ul class="list nested-list">
+                <li class="list-item">
+                  <a href="/categories/summer-wheels">Летние шины</a>
+                </li>
+                <li class="list-item">
+                  <a href="/categories/winter-wheels">Зимние шины</a>
+                </li>
+                <li class="list-item">
+                  <a href="/categories/allday-wheels">Всесезонные шины</a>
+                </li>
+              </ul>
+            </li>
+            <li class="list-item"><a href="/contacts.html">Контакты</a></li>
+            <li class="list-item"><a href="/about-us.html">О нас</a></li>
+          </ul>
+        </nav>
+        2023
+      </div>
     </footer>
   </body>
 </html>
