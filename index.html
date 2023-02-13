@@ -39,28 +39,11 @@
         <h1>...Загрузка</h1>
         <h2>...Загрузка</h2>
       </div>
-      <script>
-        const greeting = document.getElementsByClassName("greeting")[0];
-        const header = greeting.getElementsByTagName("h1")[0];
-        const description = greeting.getElementsByTagName("h2")[0];
-        const result = fetch("./greeting.json");
-        result
-          .then((response) => {
-            return response.json();
-          })
-          .then((data) => {
-            header.innerHTML = data.header;
-            description.innerHTML = data.description;
-          })
-          .catch((error) => {
-            console.log(error.message);
-          });
-      </script>
       <section class="category-preview">
         <div class="category-header">
           <h3>Самые лучшие летние шины</h3>
           <span>
-            <a href="/categories/summer-wheels.html">Все летние шины</a>
+            <a href="/categories/summer-wheels/summer-wheels.html">Все летние шины</a>
           </span>
         </div>
         <div class="products-container">
@@ -103,7 +86,7 @@
         <div class="category-header">
           <h3>Самые лучшие зимние шины</h3>
           <span>
-            <a href="/categories/winter-wheels.html">Все зимние шины</a>
+            <a href="/categories/winter-wheels/winter-wheels.html">Все зимние шины</a>
           </span>
         </div>
         <div class="products-container">
@@ -146,7 +129,7 @@
         <div class="category-header">
           <h3>Самые лучшие всесезонные шины</h3>
           <span>
-            <a href="/categories/allday-wheels.html">Все всесезонные шины</a>
+            <a href="/categories/allday-wheels/allday-wheels.html">Все всесезонные шины</a>
           </span>
         </div>
         <div class="products-container">
@@ -212,5 +195,6 @@
         2023
       </div>
     </footer>
+    <script src="/script.js"></script>
   </body>
 </html>
