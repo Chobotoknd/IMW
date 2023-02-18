@@ -131,6 +131,11 @@ header {
   font-style: italic;
 }
 
+.category-preview .product .product-remove {
+  float: right;
+  color: red;
+}
+
 footer {
   background-color: rgb(124, 201, 236);
 }

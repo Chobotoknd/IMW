@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Интернет Магазин Шин</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <header>
+      <span><a href="/" class="logotype">Интернет Магазин Шин</a></span>
+      <nav>
+        <ul class="list">
+          <li class="list-item"><a href="/">Главная</a></li>
+          <li class="list-item list-item-with-nested-list">
+            Каталог
+            <div class="nested-list-wrapper">
+              <ul class="list nested-list">
+                <li class="list-item">
+                  <a href="/categories/summer-wheels">Летние шины</a>
+                </li>
+                <li class="list-item">
+                  <a href="/categories/winter-wheels">Зимние шины</a>
+                </li>
+                <li class="list-item">
+                  <a href="/categories/allday-wheels">Всесезонные шины</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="list-item"><a href="/contacts.html">Контакты</a></li>
+          <li class="list-item"><a href="/about-us.html">О нас</a></li>
+          <li class="list-item">
+            <a href="/cart.html">Корзина <b id="cartLengthIndicator"></b></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <script>
+        const products = [];
+
+        if (localStorage.length > 0) {
+          cartLengthIndicator.innerHTML = localStorage.length;
+        }
+
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(0);
+          const productString = localStorage.getItem(key);
+          const product = JSON.parse(productString);
+          products.push(product);
+        }
+      </script>
+      <section class="category-preview">
+        <div class="category-header">
+          <h3>Товары в корзине</h3>
+        </div>
+        <div id="productsContainer" class="products-container"></div>
+      </section>
+      <script>
+        function removeFromCart(id) {
+          localStorage.removeItem(id);
+        }
+
+        products.forEach(({ id, link, image, name, price }) => {
+          productsContainer.innerHTML += `
+                    <article class="product">
+                        <a href="${link}">
+                            <img src="${image}" alt=${name} class="product-image" />
+                            <h4 class="product-name">${name}</h4>
+                            <span class="product-price">${price}</span>
+                        </a>
+                        <span class="product-remove" onclick="removeFromCart('${id}')">Удалить из корзины</span>
+                    </article>
+                    `;
+        });
+      </script>
+    </main>
+    <footer>
+      <div class="wrapper">
+        <nav>
+          <ul class="list">
+            <li class="list-item"><a href="/">Главная</a></li>
+            <li class="list-item">
+              Каталог
+              <ul class="list nested-list">
+                <li class="list-item">
+                  <a href="/categories/summer-wheels">Летние шины</a>
+                </li>
+                <li class="list-item">
+                  <a href="/categories/winter-wheels">Зимние шины</a>
+                </li>
+                <li class="list-item">
+                  <a href="/categories/allday-wheels">Всесезонные шины</a>
+                </li>
+              </ul>
+            </li>
+            <li class="list-item"><a href="/contacts.html">Контакты</a></li>
+            <li class="list-item"><a href="/about-us.html">О нас</a></li>
+          </ul>
+        </nav>
+        2023
+      </div>
+    </footer>
+  </body>
+</html>
