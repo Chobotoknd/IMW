@@ -1,0 +1,29 @@
+[
+    {
+        "id": "c8fd71d7-5c99-4ae0-bc22-ab7375622e42",
+        "name": "Средние шины",
+        "type": "all-season",
+        "price": "10 000 руб.",
+        "image": "ff981f0e-4b0a-4313-86f1-74037b40b937.jpg",
+        "specifications": [
+            {
+                "name": "Производитель",
+                "value": "Cordiant",
+                "tip": "",
+                "link": ""
+            },
+            {
+                "name": "Модель",
+                "value": "Snow Cross 2",
+                "tip": "",
+                "link": "https://www.kolesa-darom.ru/catalog/avto/shiny/cordiant/snow-cross-2/"
+            },
+            {
+                "name": "Сезонность",
+                "value": "Все сезоны",
+                "tip": "Зависит от состава резины, рисунка протектора. Влияет на сцеление с дорогой, управляемость, тормозной путь. Замена летней на зимнюю и обратно при +7°С.",
+                "link": ""
+            }
+        ]
+    }
+]
