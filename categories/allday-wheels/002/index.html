@@ -28,14 +28,33 @@
                   <a href="/categories/allday-wheels">Всесезонные шины</a>
                 </li>
               </ul>
-            </div>
+            
           </li>
-          <li class="list-item"><a href="/contacts.html">Контакты</a></li>
-          <li class="list-item"><a href="/about-us.html">О нас</a></li>
+          <li class="list-item"> 
+            <a href="/contacts.html">Контакты</a></li>
+          <li class="list-item">
+            <a href="/about-us.html">О нас</a></li>
+          <li class="list-item">
+            <a href="/cart.html">Корзина <b id="cartLengthIndicator"></b></a>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="product">
+      <script>
+        const products = [];
+
+        if (localStorage.length > 0) {
+          cartLengthIndicator.innerHTML = localStorage.length;
+        }
+
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(0);
+          const productString = localStorage.getItem(key);
+          const product = JSON.parse(productString);
+          products.push(product);
+        }
+      </script>
       <h1>Хорошие всесезонные шины</h1>
       <div class="wrapper">
         <section class="image-section">
@@ -62,12 +81,49 @@
             <li class="product-stat">Характеристика #5</li>
           </ul>
           <div>
-            <button>В корзину</button>
-            <button>Купить в один клик</button>
-          </div>
-        </section>
-      </div>
-    </main>
+          <script>
+            const PRODUCT = {
+              id: "Хорошие всесезонные шины 002",
+              name: "Хорошие всесезонные шины",
+              price: "15 000 руб.",
+              image: "/categories/allday-wheels/002/medium-wheel.jpg",
+              link: "/categories/allday-wheels/002/index.html",
+            };
+          </script>
+          <button id="addToCartButton" onclick="addToCart(PRODUCT)">
+            В корзину
+          </button>
+          <script>
+            function checkInCart(id) {
+              for (let i = 0; i < localStorage.length; i++) {
+                const productId = localStorage.key(i);
+                if (productId === id) return true;
+              }
+              return false;
+            }
+
+            if (checkInCart(PRODUCT.id)) {
+              addToCartButton.disabled = true;
+              addToCartButton.innerHTML = "Добавлено";
+            }
+
+            if (localStorage.length > 0) {
+              cartLengthIndicator.innerHTML = localStorage.length;
+            }
+
+            function addToCart(product) {
+              if (checkInCart(PRODUCT.id)) return;
+              localStorage.setItem(product.id, JSON.stringify(product));
+              addToCartButton.innerHTML = "Добавлено";
+              cartLengthIndicator.innerHTML =
+                (parseInt(cartLengthIndicator.innerHTML) || 0) + 1;
+            }
+          </script>
+          <button>Купить в один клик</button>
+        </div>
+      </section>
+    </div>
+  </main>
     <footer>
       <div class="wrapper">
         <nav>

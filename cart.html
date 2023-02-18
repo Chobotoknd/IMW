@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Интернет Магазин Шин</title>
-    <link rel="stylesheet" href="./index.css" />
+    <title>Корзина</title>
+    <link rel="stylesheet" href="./cart.css" />
   </head>
   <body>
     <header>
@@ -27,10 +27,12 @@
                   <a href="/categories/allday-wheels">Всесезонные шины</a>
                 </li>
               </ul>
-            </div>
+            
           </li>
-          <li class="list-item"><a href="/contacts.html">Контакты</a></li>
-          <li class="list-item"><a href="/about-us.html">О нас</a></li>
+          <li class="list-item"> 
+            <a href="/contacts.html">Контакты</a></li>
+          <li class="list-item">
+            <a href="/about-us.html">О нас</a></li>
           <li class="list-item">
             <a href="/cart.html">Корзина <b id="cartLengthIndicator"></b></a>
           </li>
@@ -54,7 +56,7 @@
       </script>
       <section class="category-preview">
         <div class="category-header">
-          <h3>Товары в корзине</h3>
+          <h3 class="cart-header">Товары в корзине</h3>
         </div>
         <div id="productsContainer" class="products-container"></div>
       </section>
