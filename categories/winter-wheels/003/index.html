@@ -41,20 +41,6 @@
       </nav>
     </header>
     <main class="product">
-      <script>
-        const products = [];
-
-        if (localStorage.length > 0) {
-          cartLengthIndicator.innerHTML = localStorage.length;
-        }
-
-        for (let i = 0; i < localStorage.length; i++) {
-          const key = localStorage.key(0);
-          const productString = localStorage.getItem(key);
-          const product = JSON.parse(productString);
-          products.push(product);
-        }
-      </script>
       <h1>Отличные зимние шины</h1>
       <div class="wrapper">
         <section class="image-section">

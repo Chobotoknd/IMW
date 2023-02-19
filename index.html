@@ -46,10 +46,12 @@
     <main>
       <div id="banner" class="banner"></div>
       <script>
-        fetcher("main/banner").then(({ header, description }) => {
+        fetcher("main/banner").then(({ header, description, image }) => {
           window.banner.innerHTML = `
             <h1>${header}</h1>
             <h2>${description}</h2>
+            <img 
+            src="${image}", onclick="window.location='/categories/summer-wheels/summer-wheels.html'" />
           `;
         });
       </script>
