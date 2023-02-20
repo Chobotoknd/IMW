@@ -5,40 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Интернет Магазин Шин</title>
-    <link rel="stylesheet" href="./common-styles.css" />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/variables.css" />
+    <link rel="stylesheet" href="/styles/common-styles.css" />
+    <link rel="stylesheet" href="/styles/layout-styles.css" />
+    <link rel="stylesheet" href="/index.css" />
     <script src="scripts/fetcher.js"></script>
   </head>
   <body>
     <header>
-      <span><a href="/" class="logotype">Интернет Магазин Шин</a></span>
+      <a href="/">Интернет Магазин Шин</a>
       <nav>
         <ul class="list">
-          <li class="list-item"><a href="/">Главная</a></li>
-          <li class="list-item list-item-with-nested-list">
-            Каталог
-            <div class="nested-list-wrapper">
-              <ul class="list nested-list">
-                <li class="list-item">
-                  <a href="/categories/summer-wheels">Летние шины</a>
+          <li>
+            <a href="/" class="button">Главная</a>
+          </li>
+          <li class="dropdown-container">
+            <a class="button">Каталог</a>
+            <div class="dropdown-content">
+              <ul class="list dropdown">
+                <li>
+                  <a href="/categories/summer-wheels" class="button">
+                    Летние шины
+                  </a>
                 </li>
-                <li class="list-item">
-                  <a href="/categories/winter-wheels">Зимние шины</a>
+                <li>
+                  <a href="/categories/winter-wheels" class="button">
+                    Зимние шины
+                  </a>
                 </li>
-                <li class="list-item">
-                  <a href="/categories/allday-wheels">Всесезонные шины</a>
+                <li>
+                  <a href="/categories/allday-wheels" class="button">
+                    Всесезонные шины
+                  </a>
                 </li>
               </ul>
             </div>
           </li>
-          <li class="list-item">
-            <a href="/contacts.html">Контакты</a>
-          </li>
-          <li class="list-item">
-            <a href="/about-us.html">О нас</a>
-          </li>
-          <li class="list-item">
-            <a href="/cart.html">Корзина <b id="cartLengthIndicator"></b></a>
+          <li>
+            <a href="/cart.html" class="button">
+              Корзина
+              <b id="cart-indicator"></b>
+            </a>
           </li>
         </ul>
       </nav>
