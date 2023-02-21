@@ -1,12 +1,13 @@
 :root {
     --color-dark-100: #353638;
+    --color-dark-100-overlay: rgba(35, 36, 38, .7);
     --color-dark-90: #383838;
     --color-dark-10: #E9E9E9;
     --color-dark-0: #fff;
     --color-accent: rgb(0, 146, 193);
 
-    --font-small: 14px;
-    --font-small-lineheight: 16px;
+    --font-small: 12px;
+    --font-small-lineheight: 14px;
     --font-medium: 16px;
     --font-medium-lineheight: 18px;
     --font-large: 22px;

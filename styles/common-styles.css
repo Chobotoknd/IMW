@@ -16,12 +16,38 @@ a {
 }
 
 .button {
-    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 36px;
+    padding: 0 10px;
     border-radius: 5px;
-    border: none;
+    min-width: 90px;
     color:  var(--color-dark-100);
-    cursor: pointer;
+    font-size: var(--font-medium);
+    line-height: var(--font-medium-lineheight);
     white-space: nowrap;
+    cursor: pointer;
+    border: none;
+}
+
+.button #cart-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-accent);
+    height: 20px;
+    min-width: 20px;
+    padding: 0 2px;
+    border-radius: 5px;
+    color:  var(--color-dark-0);
+    font-size: var(--font-small);
+    line-height: var(--font-small-lineheight);
+}
+
+.button #cart-indicator:empty {
+    display: none;
 }
 
 .button:hover {
@@ -29,7 +55,6 @@ a {
 }
 
 a.button {
-    display: block;
     text-decoration: none;
 }
 

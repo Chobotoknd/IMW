@@ -1,9 +1,41 @@
-.banner {
-  min-height: 238px;
-  padding: 50px;
+#banner {
   margin: 20px;
+  background-color: var(--color-dark-10);
+  background-size: cover;
+  overflow: hidden;
   border-radius: 5px;
-  background-color: rgb(162, 214, 238);
+}
+
+#banner .overlay {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--color-dark-100-overlay);
+  min-height: 250px;
+  padding: 20px;
+  color: var(--color-dark-0);
+}
+
+#banner .overlay .banner-header,
+#banner .overlay .banner-description {
+  margin: 0;
+}
+
+#banner .overlay .banner-header {
+  font-size: var(--font-large);
+  line-height: var(--font-large-lineheight);
+}
+
+#banner .overlay .banner-description {
+  font-size: var(--font-medium);
+  line-height: var(--font-medium-lineheight);
+}
+
+#banner .button {
+  color: var(--color-dark-0);
+  background-color: var(--color-accent);
 }
 
 .category-preview {

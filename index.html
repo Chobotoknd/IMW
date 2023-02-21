@@ -50,18 +50,41 @@
           </li>
         </ul>
       </nav>
+      <script>
+        window["cart-indicator"].innerHTML =
+          window.localStorage.length > 0 ? window.localStorage.length : "";
+      </script>
     </header>
     <main>
-      <div id="banner" class="banner"></div>
+      <div id="banner"></div>
       <script>
-        fetcher("main/banner").then(({ header, description, image }) => {
-          window.banner.innerHTML = `
-            <h1>${header}</h1>
-            <h2>${description}</h2>
-            <img 
-            src="${image}", onclick="window.location='/categories/summer-wheels/summer-wheels.html'" />
-          `;
-        });
+        fetcher("main/banner/content").then(
+          ({ header, description, cover, link }) => {
+            const overlay = document.createElement("div");
+            overlay.classList.add("overlay");
+            if (cover) window.banner.style.backgroundImage = `url(${cover})`;
+            if (header) {
+              const h1 = document.createElement("h1");
+              h1.innerHTML = header;
+              h1.classList.add("banner-header");
+              overlay.appendChild(h1);
+            }
+            if (description) {
+              const h2 = document.createElement("h2");
+              h2.innerHTML = description;
+              h2.classList.add("banner-description");
+              overlay.appendChild(h2);
+            }
+            if (link) {
+              const button = document.createElement("a");
+              button.href = link;
+              button.innerHTML = "Перейти";
+              button.classList.add("button");
+              overlay.appendChild(button);
+            }
+            window.banner.appendChild(overlay);
+          }
+        );
       </script>
       <section class="category-preview">
         <div class="category-header">
@@ -218,8 +241,6 @@
                 </li>
               </ul>
             </li>
-            <li class="list-item"><a href="/contacts.html">Контакты</a></li>
-            <li class="list-item"><a href="/about-us.html">О нас</a></li>
           </ul>
         </nav>
         2023
