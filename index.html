@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="/styles/common-styles.css" />
     <link rel="stylesheet" href="/styles/layout-styles.css" />
     <link rel="stylesheet" href="/index.css" />
-    <script src="scripts/fetcher.js"></script>
+    <script src="/scripts/fetcher.js"></script>
+    <script src="/scripts/cart.js"></script>
   </head>
   <body>
     <header>
@@ -51,8 +52,14 @@
         </ul>
       </nav>
       <script>
-        window["cart-indicator"].innerHTML =
-          window.localStorage.length > 0 ? window.localStorage.length : "";
+        function updateCartIndicator(products) {
+          window["cart-indicator"].innerHTML =
+            products.length > 0 ? products.length : "";
+        }
+        new Cart(updateCartIndicator).listen(
+          "add to cart",
+          updateCartIndicator
+        );
       </script>
     </header>
     <main>
