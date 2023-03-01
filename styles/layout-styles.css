@@ -47,4 +47,24 @@ main {
 }
 
 footer {
+  align-items: left;
+  background-color: var(--color-dark-0);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+footer .wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+footer .wrapper .list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style-type: none;
+  gap: 10px;
 }

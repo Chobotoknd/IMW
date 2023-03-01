@@ -94,29 +94,3 @@
   color: red;
 }
 
-footer {
-  background-color: rgb(124, 201, 236);
-}
-
-footer .wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-footer .wrapper .list {
-  gap: 40px;
-}
-
-footer .wrapper .list-item {
-  text-align: left;
-}
-
-footer .wrapper .nested-list {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}

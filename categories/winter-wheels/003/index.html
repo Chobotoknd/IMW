@@ -5,40 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Отличные зимние шины</title>
+    <link rel="stylesheet" href="/styles/normalize.css" />
+    <link rel="stylesheet" href="/styles/variables.css" />
+    <link rel="stylesheet" href="/styles/common-styles.css" />
+    <link rel="stylesheet" href="/styles/layout-styles.css" />
     <link rel="stylesheet" href="/index.css" />
     <link rel="stylesheet" href="/categories/product.css" />
+    <script src="/scripts/fetcher.js"></script>
+    <script src="/scripts/cart.js"></script>
   </head>
   <body>
     <header>
-      <span><a href="/" class="logotype">Интернет Магазин Шин</a></span>
+      <a href="/">Интернет Магазин Шин</a>
       <nav>
         <ul class="list">
-          <li class="list-item"><a href="/">Главная</a></li>
-          <li class="list-item list-item-with-nested-list">
-            Каталог
-            <div class="nested-list-wrapper">
-              <ul class="list nested-list">
-                <li class="list-item">
-                  <a href="/categories/summer-wheels">Летние шины</a>
+          <li>
+            <a href="/" class="button">Главная</a>
+          </li>
+          <li class="dropdown-container">
+            <a class="button">Каталог</a>
+            <div class="dropdown-content">
+              <ul class="list dropdown">
+                <li>
+                  <a href="/categories/summer-wheels/summer-wheels.html" class="button">
+                    Летние шины
+                  </a>
                 </li>
-                <li class="list-item">
-                  <a href="/categories/winter-wheels">Зимние шины</a>
+                <li>
+                  <a href="/categories/winter-wheels/winter-wheels.html" class="button">
+                    Зимние шины
+                  </a>
                 </li>
-                <li class="list-item">
-                  <a href="/categories/allday-wheels">Всесезонные шины</a>
+                <li>
+                  <a href="/categories/allday-wheels/allday-wheels.html" class="button">
+                    Всесезонные шины
+                  </a>
                 </li>
               </ul>
-            
+            </div>
           </li>
-          <li class="list-item"> 
-            <a href="/contacts.html">Контакты</a></li>
-          <li class="list-item">
-            <a href="/about-us.html">О нас</a></li>
-          <li class="list-item">
-            <a href="/cart.html">Корзина <b id="cartLengthIndicator"></b></a>
+          <li>
+            <a href="/cart.html" class="button">
+              Корзина
+              <b id="cart-indicator"></b>
+            </a>
           </li>
         </ul>
       </nav>
+      <script>
+        function updateCartIndicator(products) {
+          window["cart-indicator"].innerHTML =
+            products.length > 0 ? products.length : "";
+        }
+        const cart = new Cart(updateCartIndicator).listen(
+          "add to cart",
+          updateCartIndicator
+        );
+      </script>
     </header>
     <main class="product">
       <h1>Отличные зимние шины</h1>
@@ -76,35 +99,9 @@
                 link: "/categories/winter-wheels/003/index.html",
               };
             </script>
-            <button id="addToCartButton" onclick="addToCart(PRODUCT)">
+            <button id="addToCartButton" onclick="cart.addProduct(PRODUCT)">
               В корзину
             </button>
-            <script>
-              function checkInCart(id) {
-                for (let i = 0; i < localStorage.length; i++) {
-                  const productId = localStorage.key(i);
-                  if (productId === id) return true;
-                }
-                return false;
-              }
-
-              if (checkInCart(PRODUCT.id)) {
-                addToCartButton.disabled = true;
-                addToCartButton.innerHTML = "Добавлено";
-              }
-
-              if (localStorage.length > 0) {
-                cartLengthIndicator.innerHTML = localStorage.length;
-              }
-
-              function addToCart(product) {
-                if (checkInCart(PRODUCT.id)) return;
-                localStorage.setItem(product.id, JSON.stringify(product));
-                addToCartButton.innerHTML = "Добавлено";
-                cartLengthIndicator.innerHTML =
-                  (parseInt(cartLengthIndicator.innerHTML) || 0) + 1;
-              }
-            </script>
             <button>Купить в один клик</button>
         </div>
         </section>
@@ -116,21 +113,18 @@
           <ul class="list">
             <li class="list-item"><a href="/">Главная</a></li>
             <li class="list-item">
-              Каталог
               <ul class="list nested-list">
                 <li class="list-item">
-                  <a href="/categories/summer-wheels">Летние шины</a>
+                  <a href="/categories/summer-wheels/summer-wheels.html">Летние шины</a>
                 </li>
                 <li class="list-item">
-                  <a href="/categories/winter-wheels">Зимние шины</a>
+                  <a href="/categories/winter-wheels/winter-wheels.html">Зимние шины</a>
                 </li>
                 <li class="list-item">
-                  <a href="/categories/allday-wheels">Всесезонные шины</a>
+                  <a href="/categories/allday-wheels/allday-wheels.html">Всесезонные шины</a>
                 </li>
               </ul>
             </li>
-            <li class="list-item"><a href="/contacts.html">Контакты</a></li>
-            <li class="list-item"><a href="/about-us.html">О нас</a></li>
           </ul>
         </nav>
         2023
