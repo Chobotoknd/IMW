@@ -15,52 +15,63 @@
   </head>
   <body>
     <header>
-      <a href="/">Интернет Магазин Шин</a>
-      <nav>
-        <ul class="list">
-          <li>
-            <a href="/" class="button">Главная</a>
-          </li>
-          <li class="dropdown-container">
-            <a class="button">Каталог</a>
-            <div class="dropdown-content">
-              <ul class="list dropdown">
-                <li>
-                  <a href="/categories/summer-wheels/summer-wheels.html" class="button">
-                    Летние шины
-                  </a>
-                </li>
-                <li>
-                  <a href="/categories/winter-wheels/winter-wheels.html" class="button">
-                    Зимние шины
-                  </a>
-                </li>
-                <li>
-                  <a href="/categories/allday-wheels/allday-wheels.html" class="button">
-                    Всесезонные шины
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="/cart.html" class="button">
-              Корзина
-              <b id="cart-indicator"></b>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <script>
-        function updateCartIndicator(products) {
-          window["cart-indicator"].innerHTML =
-            products.length > 0 ? products.length : "";
-        }
-        new Cart(updateCartIndicator).listen(
-          "add to cart",
-          updateCartIndicator
-        );
-      </script>
+      <div class="wrapper">
+        <a href="/">Интернет Магазин Шин</a>
+        <nav>
+          <ul class="list">
+            <li>
+              <a href="/" class="button">Главная</a>
+            </li>
+            <li class="dropdown-container">
+              <a class="button">Каталог</a>
+              <div class="dropdown-content">
+                <ul class="list dropdown">
+                  <li>
+                    <a
+                      href="/categories/summer-wheels/summer-wheels.html"
+                      class="button"
+                    >
+                      Летние шины
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/categories/winter-wheels/winter-wheels.html"
+                      class="button"
+                    >
+                      Зимние шины
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/categories/allday-wheels/allday-wheels.html"
+                      class="button"
+                    >
+                      Всесезонные шины
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="/cart.html" class="button">
+                Корзина
+                <b id="cart-indicator"></b>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <script>
+          function updateCartIndicator(products) {
+            window["cart-indicator"].innerHTML =
+              products.length > 0 ? products.length : "";
+          }
+          new Cart(updateCartIndicator).listen(
+            "add to cart",
+            updateCartIndicator
+          );
+        </script>
+      </div>
     </header>
     <main>
       <div id="banner"></div>
@@ -93,157 +104,77 @@
           }
         );
       </script>
-      <section class="category-preview">
-        <div class="category-header">
-          <h3>Самые лучшие летние шины</h3>
-          <span>
-            <a href="/categories/summer-wheels/summer-wheels.html">
-              Все летние шины
-            </a>
-          </span>
-        </div>
-        <div class="products-container">
-          <article class="product">
-            <a href="/categories/summer-wheels/001/index.html">
-              <img
-                src="/categories/summer-wheels/001/wheels-new.jpg"
-                alt="Средние летние шины"
-                class="product-image"
-              />
-              <h4 class="product-name">Средние летние шины</h4>
-              <span class="product-price">10 000 руб.</span>
-            </a>
-          </article>
-          <article class="product">
-            <a href="/categories/summer-wheels/002/index.html">
-              <img
-                src="/categories/summer-wheels/002/medium_wheel.jpg"
-                alt="Хорошие летние шины"
-                class="product-image"
-              />
-              <h4 class="product-name">Хорошие летние шины</h4>
-              <span class="product-price">15 000 руб.</span>
-            </a>
-          </article>
-          <article class="product">
-            <a href="/categories/summer-wheels/003/index.html">
-              <img
-                src="/categories/summer-wheels/003/top_wheel.jpg"
-                alt="Отличные летние шины"
-                class="product-image"
-              />
-              <h4 class="product-name">Отличные летние шины</h4>
-              <span class="product-price">20 000 руб.</span>
-            </a>
-          </article>
-        </div>
-      </section>
-      <section class="category-preview">
-        <div class="category-header">
-          <h3>Самые лучшие зимние шины</h3>
-          <span>
-            <a href="/categories/winter-wheels/winter-wheels.html"
-              >Все зимние шины</a
-            >
-          </span>
-        </div>
-        <div class="products-container">
-          <article class="product">
-            <a href="/categories/winter-wheels/001/index.html">
-              <img
-                src="/categories/winter-wheels/001/wheel.jpg"
-                alt="Средние зимние шины"
-                class="product-image"
-              />
-              <h4 class="product-name">Средние зимние шины</h4>
-              <span class="product-price">10 000 руб.</span>
-            </a>
-          </article>
-          <article class="product">
-            <a href="/categories/winter-wheels/002/index.html">
-              <img
-                src="/categories/winter-wheels/002/medium_wheel.jpg"
-                alt="Хорошие зимние шины"
-                class="product-image"
-              />
-              <h4 class="product-name">Хорошие зимние шины</h4>
-              <span class="product-price">15 000 руб.</span>
-            </a>
-          </article>
-          <article class="product">
-            <a href="/categories/winter-wheels/003/index.html">
-              <img
-                src="/categories/winter-wheels/003/Top_wheel.jpg"
-                alt="Отличные зимние шины"
-                class="product-image"
-              />
-              <h4 class="product-name">Отличные зимние шины</h4>
-              <span class="product-price">20 000 руб.</span>
-            </a>
-          </article>
-        </div>
-      </section>
-      <section class="category-preview">
-        <div class="category-header">
-          <h3>Самые лучшие всесезонные шины</h3>
-          <span>
-            <a href="/categories/allday-wheels/allday-wheels.html"
-              >Все всесезонные шины</a
-            >
-          </span>
-        </div>
-        <div class="products-container">
-          <article class="product">
-            <a href="/categories/allday-wheels/001/index.html">
-              <img
-                src="/categories/allday-wheels/001/wheel.jpg"
-                alt="Средние всесезонные шины"
-                class="product-image"
-              />
-              <h4 class="product-name">Средние всесезонные шины</h4>
-              <span class="product-price">10 000 руб.</span>
-            </a>
-          </article>
-          <article class="product">
-            <a href="/categories/allday-wheels/002/index.html">
-              <img
-                src="/categories/allday-wheels/002/medium_wheel.jpg"
-                alt="Хорошие всесезонные шины"
-                class="product-image"
-              />
-              <h4 class="product-name">Хорошие всесезонные шины</h4>
-              <span class="product-price">15 000 руб.</span>
-            </a>
-          </article>
-          <article class="product">
-            <a href="/categories/allday-wheels/003/index.html">
-              <img
-                src="/categories/allday-wheels/003/Top_wheel.jpg"
-                alt="Отличные всесезонные шины"
-                class="product-image"
-              />
-              <h4 class="product-name">Отличные всесезонные шины</h4>
-              <span class="product-price">20 000 руб.</span>
-            </a>
-          </article>
-        </div>
-      </section>
+      <div id="category-previews"></div>
+      <script>
+        Promise.all([fetcher("categories"), fetcher("products")]).then(
+          ([categories, products]) => {
+            categories.forEach(({ name, id }) => {
+              if (products.find(({ type }) => type === id)) {
+                const section = document.createElement("section");
+                section.classList.add("category-preview");
+                const header = document.createElement("div");
+                header.classList.add("category-header");
+                const h3 = document.createElement("h3");
+                h3.innerHTML = `Самые лучшие ${name} шины`;
+                const a = document.createElement("a");
+                a.innerHTML = `Все ${name} шины`;
+                a.href = `/${id}`;
+                a.classList.add("button");
+                const productsEl = document.createElement("div");
+                productsEl.classList.add("category-products");
+                const categoryProducts = products.filter(
+                  ({ type }) => type === id
+                );
+                const categoryPreviewProducts = categoryProducts.slice(0, 3);
+                categoryPreviewProducts.forEach((product) => {
+                  const productEl = document.createElement("article");
+                  productEl.classList.add("product");
+                  const productA = document.createElement("a");
+                  productA.href = `/${id}/${product.id}`;
+                  const productImg = document.createElement("img");
+                  productImg.src = product.image;
+                  productImg.alt = product.name;
+                  productImg.classList.add("product-image");
+                  const productName = document.createElement("h4");
+                  productName.classList.add("product-name");
+                  productName.innerHTML = product.name;
+                  const productPrice = document.createElement("span");
+                  productPrice.classList.add("product-price");
+                  productPrice.innerHTML = product.price;
+                  productA.append(productImg, productName, productPrice);
+                  productEl.append(productA);
+                  productsEl.append(productEl);
+                });
+                header.append(h3, a);
+                section.append(header, productsEl);
+                window["category-previews"].append(section);
+              }
+            });
+          }
+        );
+      </script>
     </main>
     <footer>
       <div class="wrapper">
         <nav>
           <ul class="list">
-            <li class="list-item"><a href="/">Главная</a></li>
-            <li class="list-item">
-              <ul class="list nested-list">
-                <li class="list-item">
-                  <a href="/categories/summer-wheels/summer-wheels.html">Летние шины</a>
+            <li><a href="/">Главная</a></li>
+            <li>
+              <ul class="list">
+                <li>
+                  <a href="/categories/summer-wheels/summer-wheels.html"
+                    >Летние шины</a
+                  >
                 </li>
-                <li class="list-item">
-                  <a href="/categories/winter-wheels/winter-wheels.html">Зимние шины</a>
+                <li>
+                  <a href="/categories/winter-wheels/winter-wheels.html"
+                    >Зимние шины</a
+                  >
                 </li>
-                <li class="list-item">
-                  <a href="/categories/allday-wheels/allday-wheels.html">Всесезонные шины</a>
+                <li>
+                  <a href="/categories/allday-wheels/allday-wheels.html"
+                    >Всесезонные шины</a
+                  >
                 </li>
               </ul>
             </li>

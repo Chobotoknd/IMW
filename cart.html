@@ -26,17 +26,26 @@
             <div class="dropdown-content">
               <ul class="list dropdown">
                 <li>
-                  <a href="/categories/summer-wheels/summer-wheels.html" class="button">
+                  <a
+                    href="/categories/summer-wheels/summer-wheels.html"
+                    class="button"
+                  >
                     Летние шины
                   </a>
                 </li>
                 <li>
-                  <a href="/categories/winter-wheels/winter-wheels.html" class="button">
+                  <a
+                    href="/categories/winter-wheels/winter-wheels.html"
+                    class="button"
+                  >
                     Зимние шины
                   </a>
                 </li>
                 <li>
-                  <a href="/categories/allday-wheels/allday-wheels.html" class="button">
+                  <a
+                    href="/categories/allday-wheels/allday-wheels.html"
+                    class="button"
+                  >
                     Всесезонные шины
                   </a>
                 </li>
@@ -51,37 +60,56 @@
           </li>
         </ul>
       </nav>
-      <script>
-        function updateCartIndicator(products) {
-          window["cart-indicator"].innerHTML =
-            products.length > 0 ? products.length : "";
-        }
-        const cart = new Cart(updateCartIndicator);
-        cart.listen("remove from cart", updateCartIndicator);
-      </script>
     </header>
     <main>
       <section class="category-preview">
         <div class="category-header">
           <h3 class="cart-header">Товары в корзине</h3>
         </div>
-        <div id="productsContainer" class="products-container"></div>
+        <div id="products-container" class="products-container"></div>
       </section>
-      <script>
-        cart.products.forEach(({ id, link, image, name, price }) => {
-          productsContainer.innerHTML += `
-                    <article class="product">
-                        <a href="${link}">
-                            <img src="${image}" alt=${name} class="product-image" />
-                            <h4 class="product-name">${name}</h4>
-                            <span class="product-price">${price}</span>
-                        </a>
-                        <span class="product-remove" onclick="cart.deleteProduct('${id}')">Удалить из корзины</span>
-                    </article>
-                    `;
-        });
-      </script>
     </main>
+    <script>
+      function updateCartIndicator(products) {
+        window["cart-indicator"].innerHTML =
+          products.length > 0 ? products.length : "";
+      }
+      function renderProductsList(products) {
+        window["products-container"].innerHTML = "";
+        products.forEach((product) => {
+          const productEl = document.createElement("article");
+          productEl.classList.add("product");
+          const productA = document.createElement("a");
+          productA.href = product.link;
+          const productImg = document.createElement("img");
+          productImg.src = product.image;
+          productImg.alt = product.name;
+          productImg.classList.add("product-image");
+          const productName = document.createElement("h4");
+          productName.classList.add("product-name");
+          productName.innerHTML = product.name;
+          const productPrice = document.createElement("span");
+          productPrice.classList.add("product-price");
+          productPrice.innerHTML = product.price;
+          const deleteProduct = document.createElement("span");
+          deleteProduct.classList.add("product-remove");
+          deleteProduct.innerHTML = "Удалить из корзины";
+          deleteProduct.addEventListener("click", () => {
+            cart.deleteProduct(product.id);
+          });
+          productA.append(productImg, productName, productPrice);
+          productEl.append(productA, deleteProduct);
+          window["products-container"].append(productEl);
+        });
+      }
+      const cart = new Cart(function (products) {
+        updateCartIndicator(products);
+        renderProductsList(products);
+      });
+      cart
+        .listen("remove from cart", updateCartIndicator)
+        .listen("remove from cart", renderProductsList);
+    </script>
     <footer>
       <div class="wrapper">
         <nav>
@@ -90,13 +118,19 @@
             <li class="list-item">
               <ul class="list nested-list">
                 <li class="list-item">
-                  <a href="/categories/summer-wheels/summer-wheels.html">Летние шины</a>
+                  <a href="/categories/summer-wheels/summer-wheels.html"
+                    >Летние шины</a
+                  >
                 </li>
                 <li class="list-item">
-                  <a href="/categories/winter-wheels/winter-wheels.html">Зимние шины</a>
+                  <a href="/categories/winter-wheels/winter-wheels.html"
+                    >Зимние шины</a
+                  >
                 </li>
                 <li class="list-item">
-                  <a href="/categories/allday-wheels/allday-wheels.html">Всесезонные шины</a>
+                  <a href="/categories/allday-wheels/allday-wheels.html"
+                    >Всесезонные шины</a
+                  >
                 </li>
               </ul>
             </li>

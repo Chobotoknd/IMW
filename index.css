@@ -46,6 +46,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .category-preview .category-header a {
@@ -93,4 +94,3 @@
   float: right;
   color: red;
 }
-
